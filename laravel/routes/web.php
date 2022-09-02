@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('index', [AdminController::class, 'index']);
+Route::get('user', [AdminController::class, 'user']);
+Route::get('tambah-user', [AdminController::class, 'tambah']);
+Route::get('edit-user', [AdminController::class, 'edit']);
+Route::get('perusahaan', [AdminController::class, 'perusahaan']);
+Route::get('tambah-perusahaan', [AdminController::class, 'tambahperusahaan']);
+Route::get('lowongan', [AdminController::class, 'lowongan']);
+Route::get('tambah-lowongan', [AdminController::class, 'tambahlowongan']);
+Route::get('edit-lowongan', [AdminController::class, 'editlowongan']);
+Route::get('alumni', [AdminController::class, 'alumni']);
