@@ -11,14 +11,14 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -284,7 +284,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="{{ url('index') }}" class="waves-effect">
                                     <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
@@ -292,35 +292,35 @@
                             </li>
 
                               <li>
-                                <a href="user.html" class="waves-effect">
+                                <a href="{{ url('user') }}" class="waves-effect">
                                     <i class="mdi mdi-account-group"></i>
                                     <span>User</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="perusahaan.html" class="waves-effect">
+                                <a href="{{ url('perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>
                             </li>
 
                                 <li>
-                                <a href="lowongan.html" class="waves-effect">
+                                <a href="{{ url('lowongan') }}" class="waves-effect">
                                     <i class="mdi mdi-nfc-search-variant"></i>
                                     <span>Lowongan</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="alumni.html" class="waves-effect">
+                                <a href="{{ url('alumni') }}" class="waves-effect">
                                     <i class="mdi mdi-account-supervisor-outline"></i>
                                     <span>Alumni</span>
                                 </a>
                             </li>
 
                              <li>
-                                <a href="laporan.html" class="waves-effect">
+                                <a href="{{ url('laporan') }}" class="waves-effect">
                                     <i class="mdi mdi-file-multiple"></i>
                                     <span>Laporan</span>
                                 </a>
@@ -359,36 +359,52 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
+                                                <form action="{{ url('edit-alumni/'.$data->id) }}" method="post" enctype="multipart/form-data">
+                                                    @csrf
 
-                                                <h4 class="card-title">Edit Data</h4>
-                                                <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Nama Siswa</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <h4 class="card-title">Edit Data</h4>
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Nama Siswa</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value="{{ $data->nama_siswa }}" name="nama_siswa"
+                                                                id="example-text-input">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                  <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Tahun Ajaran</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Tahun Ajaran</label>
+                                                        <div class="col-md-4">
+                                                            <input class="form-control" type="text" value="{{ $data->tahun_awal }}"
+                                                                id="example-text-input" name="tahun_awal">
+                                                        </div>
+                                                        <label for="example-text-input" class="col-md-1 col-form-label">S/D</label>
+                                                        <div class="col-md-5">
+                                                            <input class="form-control" type="text" value="{{ $data->tahun_akhir }}"
+                                                                id="example-text-input" name="tahun_akhir">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                  <!-- End Row -->
-                                                <div class="mb-3 row">
-                                                    <label class="col-md-2 col-form-label">Status Siswa</label>
-                                                    <div class="col-md-10">
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option>Bekerja</option>
-                                                            <option>Belum Kerja</option>
-                                                             <option>Kuliah</option>
-                                                            <option>Wirausaha</option>
-                                                        </select>
-                                                        <br>
-                                                     <button class="btn btn-info" type="submit">Simpan</button>
-                                                     <button class="btn btn-dark" type="submit">Batal</button>
-                                                </div>
+                                                    <!-- End Row -->
+                                                    <div class="mb-3 row">
+                                                        <label class="col-md-2 col-form-label">Status Siswa</label>
+                                                        <div class="col-md-10">
+                                                            <select class="form-select" aria-label="Default select example" name="status">
+                                                                <option value="Bekerja" @if($data->status=='Bekerja') selected @endif>Bekerja</option>
+                                                                <option value="Belum Bekerja" @if($data->status=='Belum Bekerja') selected @endif>Belum Kerja</option>
+                                                                <option value="Kuliah" @if($data->status=='kuliah') selected @endif>Kuliah</option>
+                                                                <option value="Wirausaha" @if($data->status=='wirausaha') selected @endif>Wirausaha</option>
+                                                            </select>
+                                                            <br>
+                                                        <button class="btn btn-info" type="submit">Simpan</button>
+                                                        <button class="btn btn-dark" type="submit">Batal</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- end main content-->
 
             </div>
@@ -449,15 +465,15 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
-        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="{{ asset('assets/js/app.js') }}"></script>
 
     </body>
 

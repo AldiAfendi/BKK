@@ -390,18 +390,6 @@
                                                             <td>2022/2023</td>
                                                             <td>RPL</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th scope="row">2</th>
-                                                            <td>Afan</td>
-                                                            <td>2022/2023</td>
-                                                            <td>TKJ 1</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">3</th>
-                                                            <td>Aldi</td>
-                                                            <td>2022/2023</td>
-                                                            <td>TKJ 2</td>
-                                                        </tr>
                                                 </tbody>
                                             </table>
                                         </div>

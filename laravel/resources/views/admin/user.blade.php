@@ -373,7 +373,7 @@
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Nama</th>
-                                                        <th>Usernames</th>
+                                                        <th>Username</th>
                                                         <th>Password</th>
                                                         <th>Status</th>
                                                         <th>Aksi</th>
@@ -388,39 +388,6 @@
                                                          <td><span class="badge bg-warning text-dark">admin</span></td>
                                                         <td>
                                                             <a href="{{ url('edit-user') }}" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Mutsna</td>
-                                                        <td>Mutsnaaaa</td>
-                                                        <td>#########</td>
-                                                         <td><span class="badge bg-info">user</span></td>
-                                                        <td>
-                                                            <a href="edit-user.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                      <tr>
-                                                        <td>3</td>
-                                                        <td>Mutsna</td>
-                                                        <td>Mutsnaaaa</td>
-                                                        <td>#########</td>
-                                                         <td><span class="badge bg-info">user</span></td>
-                                                        <td>
-                                                            <a href="edit-user.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Mutsna</td>
-                                                        <td>Mutsnaaaa</td>
-                                                        <td>#########</td>
-                                                         <td><span class="badge bg-info">user</span></td>
-                                                        <td>
-                                                            <a href="edit-user.html" class="btn btn-primary btn-sm">Edit</a>
                                                              <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                                                         </td>
                                                     </tr>

@@ -26,11 +26,23 @@ class AdminController extends Controller
     }
     public function perusahaan()
     {
-        return view('admin.perusahaan');
+        $perusahaan = DB::table('perusahaan')->get();
+        return view('admin/perusahaan',['perusahaan' => $perusahaan]);
     }
     public function tambahperusahaan()
     {
-        return view('admin.tambah-perusahaan');
+        $perusahaan = DB::table('perusahaan')->first();
+        return view('admin/tambah-perusahaan')->with(compact('perusahaan'));
+    }
+    public function createperusahaan(Request $request)
+    {
+        DB::table('perusahaan')->insert([
+            'nama_perusahaan'=>$request->nama_perusahaan,
+            'tahun_awal'=>$request->tahun_awal,
+            'tahun_akhir'=>$request->tahun_akhir,
+            'bidang'=>$request->bidang,
+        ]);
+        return redirect('perusahaan');
     }
     public function lowongan()
     {
@@ -38,15 +50,57 @@ class AdminController extends Controller
     }
     public function tambahlowongan()
     {
-        return view('admin.tambah-lowongan');
+        $lowongan = DB::table('lowongan')->first();
+        return view('admin/tambah-lowongan')->with(compact('lowongan'));
     }
+    // public function createlowongan(Request $request)
+    // {
+    //     //upload gambar
+    //     $file = $request->foto;
+    //     $fileName = time() . '.'. $file->extension();
+    //     $file->move(public_path('foto'), $fileName);
+
+    //     DB::table('lowongan')->insert([
+    //         'nama_perusahaan' => $request->nama_perusahaan,
+    //         'kebutuhan' => $request->kebutuhan,
+    //         'foto' => $fileName,
+    //         'tangal_awal' => $request->tanggal_awal,
+    //         'tanggal_akhir' => $request->tanggal_akhir,
+    //     ]);
+
+        
+    //     return redirect('admin/lowongan');
+    // }
     public function editlowongan()
     {
         return view('admin.edit-lowongan');
     }
     public function alumni()
     {
-        return view('admin.alumni');
+        $alumni = DB::table('alumni')->get();
+        return view('admin/alumni',['alumni' => $alumni]);
+    }
+    public function tambahalumni()
+    {
+        $alumni = DB::table('alumni')->first();
+        return view('admin/tambah-alumni')->with(compact('alumni'));
+    }
+    public function createalumni(Request $request)
+    {
+        DB::table('alumni')->insert([
+            'nama_siswa'=>$request->nama_siswa,
+            'tahun_awal'=>$request->tahun_awal,
+            'tahun_akhir'=>$request->tahun_akhir,
+            'jurusan'=>$request->jurusan,
+            'status'=>$request->status,
+        ]);
+        return redirect('alumni');
+    }
+    public function editalumni($id)
+    {
+        $data = DB::table('alumni')->where('id',$id)->first();
+        
+        return view('admin.edit-alumni')->with(compact('data'));
     }
 
 }

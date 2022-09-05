@@ -302,7 +302,7 @@
                             </li>
 
                                <li>
-                                <a href="{{ ('Perusahaan') }}" class="waves-effect">
+                                <a href="{{ ('perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>
@@ -379,41 +379,16 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Hummasoft</td>
-                                                        <td>2022</td>
-                                                        <td>2023</td>
-                                                        <td>Informatika</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>2</td>
-                                                        <td>Semen Gresik</td>
-                                                        <td>2022</td>
-                                                        <td>2023</td>
-                                                        <td>Mekanik</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Hummasoft</td>
-                                                        <td>2022</td>
-                                                        <td>2023</td>
-                                                        <td>Informatika</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>4</td>
-                                                        <td>Semen Gresik</td>
-                                                        <td>2022</td>
-                                                        <td>2023</td>
-                                                        <td>Mekanik</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Hummasoft</td>
-                                                        <td>2022</td>
-                                                        <td>2023</td>
-                                                        <td>Informatika</td>
-                                                    </tr>
+                                                    <?php $no=1; ?>
+                                                    @foreach($perusahaan as $p)
+                                                        <tr>
+                                                            <td>{{ $no++ }}</td>
+                                                            <td>{{ $p->nama_perusahaan }}</</td>
+                                                            <td>{{ $p->tahun_awal }}</</td>
+                                                            <td>{{ $p->tahun_akhir }}</</td>
+                                                            <td>{{ $p->bidang }}</</td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

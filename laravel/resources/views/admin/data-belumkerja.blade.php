@@ -284,7 +284,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="{{ url('index') }}" class="waves-effect">
                                     <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
@@ -292,35 +292,35 @@
                             </li>
 
                               <li>
-                                <a href="user.html" class="waves-effect">
+                                <a href="{{ url('user') }}" class="waves-effect">
                                     <i class="mdi mdi-account-group"></i>
                                     <span>User</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="Perusahaan.html" class="waves-effect">
+                                <a href="{{ url('Perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>
                             </li>
 
                                 <li>
-                                <a href="lowongan.html" class="waves-effect">
+                                <a href="{{ url('lowongan') }}" class="waves-effect">
                                     <i class="mdi mdi-nfc-search-variant"></i>
                                     <span>Lowongan</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="alumni.html" class="waves-effect">
+                                <a href="{{ url('alumni') }}" class="waves-effect">
                                     <i class="mdi mdi-account-supervisor-outline"></i>
                                     <span>Alumni</span>
                                 </a>
                             </li>
 
                              <li>
-                                <a href="laporan.html" class="waves-effect">
+                                <a href="{{ url('laporan') }}" class="waves-effect">
                                     <i class="mdi mdi-file-multiple"></i>
                                     <span>Laporan</span>
                                 </a>
@@ -357,10 +357,10 @@
                                                         <i class="mdi mdi-chevron-down"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="data-kerja.html">By Kerja</a>
-                                                        <a class="dropdown-item" href="data-kuliah.html">By Kuliah</a>
-                                                        <a class="dropdown-item" href="data-wirausaha.html">By Wirausaha</a>
-                                                        <a class="dropdown-item" href="data-belumkerja.html">By Belum Kerja</a>
+                                                        <a class="dropdown-item" href="{{ url('data-kerja') }}">By Kerja</a>
+                                                        <a class="dropdown-item" href="{{ url('data-kuliah') }}">By Kuliah</a>
+                                                        <a class="dropdown-item" href="{{ url('data-wirausaha') }}">By Wirausaha</a>
+                                                        <a class="dropdown-item" href="{{ url('data-belumkerja') }}">By Belum Kerja</a>
                                                     </div>
                                                 </div>  
                                     </div>
@@ -389,18 +389,6 @@
                                                             <td>Mutsna</td>
                                                             <td>2022/2023</td>
                                                             <td>RPL</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">2</th>
-                                                            <td>Afan</td>
-                                                            <td>2022/2023</td>
-                                                            <td>TKJ 1</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">3</th>
-                                                            <td>Aldi</td>
-                                                            <td>2022/2023</td>
-                                                            <td>TKJ 2</td>
                                                         </tr>
                                                 </tbody>
                                             </table>

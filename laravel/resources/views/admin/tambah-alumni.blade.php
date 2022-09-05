@@ -283,7 +283,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="{{ url('index') }}" class="waves-effect">
                                     <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
@@ -291,35 +291,35 @@
                             </li>
 
                               <li>
-                                <a href="user.html" class="waves-effect">
+                                <a href="{{ url('user') }}" class="waves-effect">
                                     <i class="mdi mdi-account-group"></i>
                                     <span>User</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="perusahaan.html" class="waves-effect">
+                                <a href="{{ url('perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>
                             </li>
 
                                 <li>
-                                <a href="lowongan.html" class="waves-effect">
+                                <a href="{{ url('lowongan') }}" class="waves-effect">
                                     <i class="mdi mdi-nfc-search-variant"></i>
                                     <span>Lowongan</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="alumni.html" class="waves-effect">
+                                <a href="{{ url('alumni') }}" class="waves-effect">
                                     <i class="mdi mdi-account-supervisor-outline"></i>
                                     <span>Alumni</span>
                                 </a>
                             </li>
 
                              <li>
-                                <a href="laporan.html" class="waves-effect">
+                                <a href="{{ url('laporan') }}" class="waves-effect">
                                     <i class="mdi mdi-file-multiple"></i>
                                     <span>Laporan</span>
                                 </a>
@@ -356,36 +356,58 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title">Masukan data</h4>
-                                                <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
-                                                <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Nama Siswa</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                <form action="{{ url('tambah-alumni') }}" method="post" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <h4 class="card-title">Masukan data</h4>
+                                                    <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Nama Siswa</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="nama_siswa">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                  <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Tahun Ajaran</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Tahun Ajaran</label>
+                                                        <div class="col-md-4">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="tahun_awal">
+                                                        </div>
+                                                        <label for="example-text-input" class="col-md-1 col-form-label">S/D</label>
+                                                        <div class="col-md-5">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="tahun_akhir">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                  <!-- End Row -->
-                                                <div class="mb-3 row">
-                                                    <label class="col-md-2 col-form-label">Status Siswa</label>
-                                                    <div class="col-md-10">
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option>Bekerja</option>
-                                                            <option>Belum Kerja</option>
-                                                            <option>Kuliah</option>
-                                                            <option>Wirausaha</option>
-                                                        </select>
-                                                        <br>
-                                                     <button class="btn btn-info" type="submit">Tambah</button>
-                                                     <button class="btn btn-dark" type="submit">Batal</button>
-                                                </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Jurusan</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="jurusan">
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Row -->
+                                                    <div class="mb-3 row">
+                                                        <label class="col-md-2 col-form-label">Status Siswa</label>
+                                                        <div class="col-md-10">
+                                                            <select class="form-select" aria-label="Default select example" name="status">
+                                                                <option value="Bekerja">Bekerja</option>
+                                                                <option value="Belum Bekerja">Belum Kerja</option>
+                                                                <option value="Kuliah">Kuliah</option>
+                                                                <option value="Wirausaha">Wirausaha</option>
+                                                            </select>
+                                                            <br>
+                                                        <button class="btn btn-info" type="submit">Tambah</button>
+                                                        <button class="btn btn-dark" type="submit">Batal</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
                 <!-- end main content-->
 
             </div>

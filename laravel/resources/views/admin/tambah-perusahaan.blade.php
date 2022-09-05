@@ -359,34 +359,42 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
+                                                <form action="{{ url('tambah-perusahaan') }}" method="post">
+                                                    @csrf
 
-                                                <h4 class="card-title">Masukan data</h4>
-                                                <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
+                                                    <h4 class="card-title">Masukan data</h4>
+                                                    <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
 
-                                                <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Nama Perusahaan</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Nama Perusahaan</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="nama_perusahaan">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                  <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Tahun Kerjasama</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Tahun Kerjasama</label>
+                                                        <div class="col-md-4">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="tahun_awal">
+                                                        </div>
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Tahun Berakhir</label>
+                                                        <div class="col-md-4">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="tahun_akhir">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Bidang</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
+                                                    <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Bidang</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="bidang">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                     <button class="btn btn-info" type="submit">Tambah</button>
-                                                     <button class="btn btn-dark" type="submit">Batal</button>
-                                                 </div>
+                                                        <button class="btn btn-info" type="submit">Tambah</button>
+                                                        <button class="btn btn-dark" type="reset">Batal</button>
+                                                    </div>
+                                                </form>
                 <!-- end main content-->
 
             </div>

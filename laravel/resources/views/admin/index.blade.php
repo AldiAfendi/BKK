@@ -302,7 +302,7 @@
                             </li>
 
                                <li>
-                                <a href="{{ url('Perusahaan') }}" class="waves-effect">
+                                <a href="{{ url('perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>

@@ -287,7 +287,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="{{ url('index') }}" class="waves-effect">
                                     <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
@@ -295,35 +295,35 @@
                             </li>
 
                               <li>
-                                <a href="user.html" class="waves-effect">
+                                <a href="{{ url('user') }}" class="waves-effect">
                                     <i class="mdi mdi-account-group"></i>
                                     <span>User</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="perusahaan.html" class="waves-effect">
+                                <a href="{{ url('perusahaan') }}" class="waves-effect">
                                     <i class="mdi mdi-home-city"></i>
                                     <span>Perusahaan</span>
                                 </a>
                             </li>
 
                                 <li>
-                                <a href="lowongan.html" class="waves-effect">
+                                <a href="{{ url('lowongan') }}" class="waves-effect">
                                     <i class="mdi mdi-nfc-search-variant"></i>
                                     <span>Lowongan</span>
                                 </a>
                             </li>
 
                                <li>
-                                <a href="alumni.html" class="waves-effect">
+                                <a href="{{ ('alumni') }}" class="waves-effect">
                                     <i class="mdi mdi-account-supervisor-outline"></i>
                                     <span>Alumni</span>
                                 </a>
                             </li>
 
                              <li>
-                                <a href="laporan.html" class="waves-effect">
+                                <a href="{{ url('laporan') }}" class="waves-effect">
                                     <i class="mdi mdi-file-multiple"></i>
                                     <span>Laporan</span>
                                 </a>
@@ -360,7 +360,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <a href="tambah-alumni.html" class="btn btn-primary mb-3">
+                                            <a href="{{ url('tambah-alumni') }}" class="btn btn-primary mb-3">
                                                 Tambah
                                             </a>
                                              <a href="#" class="btn btn-success mb-3">
@@ -380,71 +380,20 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Mutsna</td>
-                                                        <td>2021-2022</td>
-                                                        <td>RPL</td>
-                                                         <td><span class="badge bg-soft-success rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    bekerja</span></td>
-                                                        <td>
-                                                            <a href="edit-alumni.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Mutsna</td>
-                                                        <td>2022-2023</td>
-                                                        <td>TKJ 1</td>
-                                                         <td><span class="badge bg-soft-info rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    kuliah</span></td>
-                                                        <td>
-                                                            <a href="edit-alumni.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>3</td>
-                                                        <td>Mutsna</td>
-                                                        <td>2022-2023</td>
-                                                        <td>TKJ 2</td>
-                                                         <td><span class="badge bg-soft-warning rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    wirausaha</span></td>
-                                                        <td>
-                                                            <a href="edit-alumni.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>4</td>
-                                                        <td>Mutsna</td>
-                                                        <td>2022-2023</td>
-                                                        <td>TKRO</td>
-                                                         <td><span class="badge bg-soft-primary rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    bekerja</span></td>
-                                                        <td>
-                                                            <a href="edit-alumni.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>5</td>
-                                                        <td>Mutsna</td>
-                                                        <td>2022-2023</td>
-                                                        <td>IPK</td>
-                                                         <td><span class="badge bg-soft-danger rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    belum kerja</span></td>
-                                                        <td>
-                                                            <a href="edit-alumni.html" class="btn btn-primary btn-sm">Edit</a>
-                                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php $no=1; ?>
+                                                    @foreach($alumni as $data)
+                                                        <tr class="text-center">
+                                                            <td>{{ $no++ }}</td>
+                                                            <td>{{ $data->nama_siswa }}</td>
+                                                            <td>{{ $data->tahun_awal }}-{{ $data->tahun_akhir }}</td>
+                                                            <td>{{ $data->jurusan }}</td>
+                                                            <td>{{ $data->status }}</td>
+                                                            <td>
+                                                                <a href="{{ url('edit-alumni/'.$data->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

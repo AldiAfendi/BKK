@@ -359,49 +359,51 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
+                                                <form action="{{ url('tambah-lowongan') }}" method="post">
+                                                    @csrf
+                                                    <h4 class="card-title">Masukan data</h4>
+                                                    <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
 
-                                                <h4 class="card-title">Masukan data</h4>
-                                                <p class="card-title-desc">Silahkan lengkapi data berikut ini</p>
-
-                                                <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Nama Perusahaan</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
-                                                    </div>
-                                                </div>
-                                                  <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Kebutuhan</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="text" value=""
-                                                            id="example-text-input">
-                                                    </div>
-                                                </div>
-                                                <label for="form-label" for="customFile">Foto Pamflete</label>
-                                                <input type="file" class="form-control" id="customFile">
-                                                <br>
-                                                 <div>
                                                     <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">tanggal buka</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="datetime-local" value=""
-                                                            id="example-text-input">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Nama Perusahaan</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="nama_perusahaan">
+                                                        </div>
                                                     </div>
-                                                    <br>
-                                                    <br>
-                                                    <br>            
-                                                     <div>
                                                     <div class="mb-3 row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">tanggal tutup</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" type="datetime-local" value=""
-                                                            id="example-text-input">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Kebutuhan</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value=""
+                                                                id="example-text-input" name="kebutuhan">
+                                                        </div>
                                                     </div>
+                                                    <label for="form-label" for="customFile">Foto Pamflete</label>
+                                                    <input type="file" class="form-control" id="customFile" name="foto">
                                                     <br>
-                                                    <br>    
-                                                      <button class="btn btn-info" type="submit">Tambah</button>
-                                                     <button class="btn btn-dark" type="submit">Batal</button>
-                                                 </div>
+                                                    <div>
+                                                        <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">tanggal buka</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value=""
+                                                                id="example-text-input" name="tangal_awal">
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                        <br>            
+                                                        <div>
+                                                        <div class="mb-3 row">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">tanggal tutup</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value=""
+                                                                id="example-text-input" name="tanggal_akhir">
+                                                        </div>
+                                                        <br>
+                                                        <br>    
+                                                        <button class="btn btn-info" type="submit">Tambah</button>
+                                                        <button class="btn btn-dark" type="submit">Batal</button>
+                                                    </div>
+                                                </form>
                 <!-- end main content-->
 
             </div>
