@@ -284,7 +284,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="{{ ('home') }}" class="waves-effect">
+                                <a href="{{ ('admin') }}" class="waves-effect">
                                     <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
