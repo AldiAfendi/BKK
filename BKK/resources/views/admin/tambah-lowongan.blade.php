@@ -404,6 +404,13 @@
                                                         <button class="btn btn-dark" type="submit">Batal</button>
                                                     </div>
                                                 </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>   
                 <!-- end main content-->
 
             </div>

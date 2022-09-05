@@ -389,13 +389,14 @@
                                                         <td>#</td>
                                                         <td>20-01-22</td>
                                                         <td>21-01-22</td>
-                                                        <td>
-                                                            <a href="{{ ('edit-lowongan') }}" class="btn btn-primary btn-sm">Edit</a>
-                                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                        <td><span class="badge bg-soft-success rounded-pill"><i
+                                                            class="mdi mdi-checkbox-blank-circle text-success"></i>
+                                                            open</span>
                                                         </td>
-                                                         <td><span class="badge bg-soft-success rounded-pill"><i
-                                                                        class="mdi mdi-checkbox-blank-circle text-success"></i>
-                                                                    open</span></td>
+                                                       <td>
+                                                                <a href="{{ url('edit-lowongan') }}" class="btn btn-primary btn-sm">Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>

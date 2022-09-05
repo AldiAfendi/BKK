@@ -387,9 +387,9 @@
                                                             <td>{{ $a->nama_lengkap }}</td>
                                                             <td>{{ $a->name }}</td>
                                                             <td>{{ $a->password }}</td>
-                                                            <td><span class="badge bg-warning text-dark">status</span></td>
+                                                            <td><span class="badge bg-warning text-dark">{{ $a->status }}</span></td>
                                                             <td>
-                                                                <a href="{{ url('edit-user') }}" class="btn btn-primary btn-sm">Edit</a>
+                                                                <a href="{{ url('editkelas/'.$a->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                                                 <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                                                             </td>
                                                         </tr>
